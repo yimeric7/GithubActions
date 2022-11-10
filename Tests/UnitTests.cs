@@ -77,29 +77,6 @@ namespace GithubActionsLab
             Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, null));
         }
 
-        public void Divide_Valid()
-        {
-            Assert.AreEqual(.5, Program.Divide("1", "2"));
-            Assert.AreEqual(1.5, Program.Divide("3", "2"));
-            Assert.AreEqual(1, Program.Divide("5", "5"));
-        }
-
-        [Test]
-        public void Divide_Invalid()
-        {
-            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
-            Assert.Throws<FormatException>(() => Program.Divide("a", "1"));
-            Assert.Throws<FormatException>(() => Program.Divide("a", "a"));
-        }
-
-        [Test]
-        public void Divide_Null()
-        {
-            Assert.Throws<ArgumentNullException>(() => Program.Divide("1", null));
-            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, "1"));
-            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, null));
-        }
-
         public void Power_Valid()
         {
             Assert.AreEqual(1, Program.Power("1", "2"));
@@ -121,6 +98,29 @@ namespace GithubActionsLab
             Assert.Throws<ArgumentNullException>(() => Program.Power("1", null));
             Assert.Throws<ArgumentNullException>(() => Program.Power(null, "1"));
             Assert.Throws<ArgumentNullException>(() => Program.Power(null, null));
+        }
+
+        public void Divide_Valid()
+        {
+            Assert.AreEqual(.5, Program.Divide("1", "2"));
+            Assert.AreEqual(1.5, Program.Divide("3", "2"));
+            Assert.AreEqual(1, Program.Divide("5", "5"));
+        }
+
+        [Test]
+        public void Divide_Invalid()
+        {
+            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "a"));
+        }
+
+        [Test]
+        public void Divide_Null()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Divide("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, null));
         }
 
     }
